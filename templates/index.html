@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name = "viewport" content="width=device-width , initial-scale=1.0"> 
+    <title>Sign Up Form</title>
+    <link rel="stylesheet"  href="style.css">
+</head>
+<body>
+    <p> HI, Welcome to Signup page </p>
+    <p> Today is {{ day_of_week }}</p>
+    <p> The time is {{ current_time }}</p>
+    <h2>Login Page</h2><br>
+    <div class="centred">
+    <form action="/submit" method="POST" >
+        <label><b>Name</b></label>
+        <input type="text" name="name" id="name" placeholder="Enter your Name">
+        <br><br>
+        <label><b>Email: </b>
+        <input type="email" name="email" id="email" placeholder="Enter your Email">        
+        <br><br>
+        </label>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+</body>
+</html>
