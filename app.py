@@ -18,8 +18,8 @@ def home():
     current_time = datetime.now().strftime('%H:%M:%S')
     return render_template('index.html', day_of_week=day_of_week, current_time=current_time)
 
-@app.route('/submit', methods = ['POST'])
-def submit():
+@app.route('/submittodoitem', methods = ['POST'])
+def submittodoitem():
     form_data = dict(request.form)
     collection.insert_one(form_data)
     return "Data Submitted Successfully"
