@@ -8,17 +8,17 @@
     <link rel="stylesheet"  href="style.css">
 </head>
 <body>
-    <p> HI, Welcome to Signup page </p>
+    <p> Your TO-do list </p>
     <p> Today is {{ day_of_week }}</p>
     <p> The time is {{ current_time }}</p>
-    <h2>Login Page</h2><br>
+    <h2>To Do List</h2><br>
     <div class="centred">
-    <form action="/submit" method="POST" >
-        <label><b>Name</b></label>
-        <input type="text" name="name" id="name" placeholder="Enter your Name">
+    <form action="/submittodoitem" method="POST" >
+        <label><b>Item Name</b></label>
+        <input type="text" name="itemName" id="itemName" placeholder="Enter Item Name">
         <br><br>
-        <label><b>Email: </b>
-        <input type="email" name="email" id="email" placeholder="Enter your Email">        
+        <label><b>Item Description </b>
+        <input type="text" name="itemDescription" id="itemDescription" placeholder="Enter Item Description">        
         <br><br>
         </label>
         <input type="submit" value="Submit">
