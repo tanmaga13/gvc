@@ -1,9 +1,16 @@
 from flask import Flask, request, render_template
 from datetime import datetime
+from dotenv import load_dotenv
+import os
+import pymongo
+
+load_dotenv()
+MONGO_URL = os.getenv("MONGO_URL")
+client = pymongo.MongoClient(MONGO_URL)
+db = client.MyTCluster
+collection = db['flask-assignment']
 
 app = Flask(__name__)
-mongodb+srv://tanmaga02:tranmay13@mytcluster.gdrwtvc.mongodb.net/?
-appName=MyTCluster
 
 @app.route('/')
 def home():
@@ -13,10 +20,9 @@ def home():
 
 @app.route('/submit', methods = ['POST'])
 def submit():
-    name = request.form.get('name')
-    print(request.args)
-    return "Hello " + name + '!'
-
+    form_data = dict(request.form)
+    collection.insert_one(form_data)
+    return "Data Submitted Successfully"
 
 if __name__ == '__main__':
     app.run(debug=True)
